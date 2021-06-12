@@ -1,0 +1,22 @@
+# toko_upload_settings
+# this file is expected next to toko_upload.sh
+
+DRY_RUN=false
+
+
+# paths and vars
+VERSION_ARCHIV_PATH="/home/me/projects/toko/firmware_versions/"
+SOURCE_BASE_PATH="/home/me/projects/btt_firmware/BIGTREETECH-SKR-mini-E3/firmware/V1.2/Marlin-2.0.7.2-SKR-mini-E3-V1.2/"
+BUILD_DIR="$SOURCE_BASE_PATH.pio/build/STM32F103RC_btt_USB/"
+SOURCE_PATH="$SOURCE_BASE_PATH/Marlin/"
+REMOTE_DEST="pi@octoprint.intern:/media/usb0/"
+
+OCTOPRINT_X_API_KEY="EAA82DF425CC4F95C95C0FD2CDF24839"
+
+PRINT_HOST="octoprint.intern"
+
+
+MOSQUITTO_HOST="mosquitto.intern"
+MOSQUITTO_USER="me"
+MOSQUITTO_PASSWD="secret"
+MOSQUITTO_TOPIC_POWERSWITCH="tasmota/someSwitch/cmnd/POWER"
