@@ -30,6 +30,8 @@ The latter happens to be an Ender 3 with a BigTreeTech SKR E3 mini v1.2 mainboar
 - it will automatically (try to) flash itself with the content of a file "firmware.bin" if it finds such a file at the root of the sd-card at boot.
 - it is ready to export the sc-card via usb to the print host where that is availabel at /media/usb0
 You may have to prime the printer flashing an \_USB-style of firmware so the sharing of the sd-card works as this is crucial to make the upload work
+### mosquitto and the power switch
+Ok, I lied. It's not three boxes but four or maybe even five. #4 being a tasmota-enabled remote controlled power switch and #5 a mosquitto server on some host which allows to control the power switch. As it is the script assumes that the power switch that trns on the printer is reachable via mqtt and that the mosquitto host requires authorization. So it supplies a user and password with that call. 
 
 ### Install usbmount on the print host
 ```
@@ -43,3 +45,15 @@ You may have to prime the printer flashing an \_USB-style of firmware so the sha
 - sudo systemctl daemon-reload
 - sudo service systemd-udevd --full-restart
 ```
+
+## Installation
+- download or clone it
+- chmod 755 toko_upload.sh
+- create a folder for the version archive. 
+- cp toko_upload_settings_example toko_upload_settings
+- nano toko_upload_settings_example
+- make those settings all work on your machine/s. 
+- test it with DRY_RUN set to true, with that option it does everything sans the actual creation of folders, copying of data 
+
+It's just a bash script after all. If parts don't fit your environment but you still want to use it, fork it and make it work for your needs. Thanks in advance for sharing your mdifications.
+
