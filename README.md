@@ -55,5 +55,5 @@ Ok, I lied. It's not three boxes but four or maybe even five. #4 being a tasmota
 - make those settings all work on your machine/s. 
 - test it with DRY_RUN set to true, with that option it does everything sans the actual creation of folders, copying of data 
 
-It's just a bash script after all. If parts don't fit your environment but you still want to use it, fork it and make it work for your needs. Thanks in advance for sharing your mdifications.
+
 
